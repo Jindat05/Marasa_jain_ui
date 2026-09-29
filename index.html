@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Samkrit Saar Marasa - a Jain monk dedicated to sharing the path of ahimsa, truth, compassion, and spiritual liberation." />
+  <title>Samkrit Saar Marasa | The Quiet Path</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { paper: '#ffffff', 'paper-deep': '#f2f2f2', ink: '#0d0d0d', muted: '#5c5c5c', saffron: '#dc2f02', 'saffron-deep': '#b32601' },
+          fontFamily: { sans: ['"Fragment Mono"', 'monospace'], serif: ['Archivo', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { --ink: #0d0d0d; --muted-strong: #5c5c5c; --saffron-deep: #b32601; --paper-shadow: 0 18px 45px rgba(0,0,0,.14); }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #ffffff; color: #0d0d0d; font-family: 'Fragment Mono', monospace; }
+    ::selection { background: #dc2f02; color: #fff; }
+    :focus-visible { outline: 2px solid #dc2f02; outline-offset: 4px; }
+    .font-serif { text-transform: uppercase; letter-spacing: -.02em; }
+    em { font-style: normal; }
+    .rounded-full, .rounded-sm { border-radius: 0; }
+    .grain { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.32'/%3E%3C/svg%3E"); }
+    .hero-image { background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.6)), url('images/marasa_im/himalayas.JPG') center/cover; filter: saturate(.82) contrast(1.05); }
+    .depth-band { background: linear-gradient(135deg, rgba(0,0,0,.03), transparent 52%), #f2f2f2; }
+    .gallery-frame { box-shadow: var(--paper-shadow); }
+    .control-shadow { box-shadow: 0 8px 22px rgba(0,0,0,.1); }
+    .ink-shadow { box-shadow: 0 18px 45px rgba(0,0,0,.35); }
+    .reveal { animation: reveal .8s cubic-bezier(.22,1,.36,1) both; }
+    .delay-1 { animation-delay: .1s; } .delay-2 { animation-delay: .2s; } .delay-3 { animation-delay: .3s; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal-up { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); }
+    .reveal-up.in-view { opacity: 1; transform: translateY(0); }
+    .carousel-track { scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x proximity; cursor: grab; }
+    .carousel-track:active { cursor: grabbing; }
+    .carousel-track > * { scroll-snap-align: start; }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s cubic-bezier(.22,1,.36,1); }
+    .faq-answer.open { grid-template-rows: 1fr; }
+    .faq-answer > div { overflow: hidden; }
+    .marquee-wrap { overflow: hidden; }
+    .marquee-track { display: flex; width: max-content; animation: marquee 20s linear infinite; }
+    .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } .reveal-up { opacity: 1 !important; transform: none !important; } .marquee-track { animation: none !important; } }
+  </style>
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>

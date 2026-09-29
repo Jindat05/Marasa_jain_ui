@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jainism, Himalayan journeys, and sacred traditions." />
+  <title>Topic | Samkrit Saar Marasa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { paper: '#ffffff', 'paper-deep': '#f2f2f2', ink: '#0d0d0d', muted: '#5c5c5c', saffron: '#dc2f02', 'saffron-deep': '#b32601' },
+          fontFamily: { sans: ['"Fragment Mono"', 'monospace'], serif: ['Archivo', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { --ink: #0d0d0d; --muted: #5c5c5c; --saffron: #dc2f02; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #f2f2f2; color: var(--ink); font-family: 'Fragment Mono', monospace; }
+    ::selection { background: var(--saffron); color: #fff; }
+    :focus-visible { outline: 2px solid var(--saffron); outline-offset: 4px; }
+    .font-serif { text-transform: uppercase; letter-spacing: -.02em; }
+    .grain { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.32'/%3E%3C/svg%3E"); }
+    .detail-copy p { max-width: 700px; }
+    .detail-copy p + p { margin-top: 1.5rem; }
+    .note-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s ease; }
+    .note-answer.open { grid-template-rows: 1fr; }
+    .note-answer > div { overflow: hidden; }
+    .progress { transform-origin: left; transform: scaleX(0); }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <div class="grain pointer-events-none fixed inset-0 z-40 opacity-[.08]" aria-hidden="true"></div>
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel" src="topic-detail.jsx"></script>
+</body>
+</html>
